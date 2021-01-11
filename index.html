@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New year!</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<body class="darkBg">
+    <div class="wrapper">
+        <h1 class="h1">С Новым Годом!</h1>
+        <img src="img/topoboi.com-49404.jpg" class="wr_img">
+        <p> С Новым годом! Волшебства,</p>
+        <p>Смеха, счастья и тепла,</p>
+        <p>Мира, радостей, достатка</p>
+        <p>И во всех делах порядка!</p>
+
+        <p>Пусть все серое, плохое</p>
+        <p>Старый год возьмет с собою.</p>
+        <p>Впредь лишь светлые мгновенья</p>
+        <p>Создают пусть настроенье!</p>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script src="jSnow.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("body").jSnow({
+                vSize: 1000, // Размер области
+                flakes: 200, // Количество снежинок
+                flakeColor: ["#fff"], // Цвет
+                flakeMinSize: 10, // Минимальный размер снежинки
+                flakeMaxSize: 20, // Максимальный размер снежинки
+                fallingSpeedMin: 1, // Минимальная скорость снежинки
+                fallingSpeedMax: 3, // Максимальная скорость снежинки
+                flakeCode: ["*"] // Вид снежинки
+            });
+
+        });
+
+    </script>
+    <div class="snowContainer">
+        <div id="snow"></div>
+    </div>
+    <style type="text/css">
+        #garland {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('https://yraaa.ru/test/135/christmas-lights.png');
+            height: 36px;
+            width: 100%;
+            overflow: hidden;
+            z-index: 99
+        }
+
+        #nums_1 {
+            padding: 100px
+        }
+
+        .garland_1 {
+            background-position: 0 0
+        }
+
+        .garland_2 {
+            background-position: 0 -36px
+        }
+
+        .garland_3 {
+            background-position: 0 -72px
+        }
+
+        .garland_4 {
+            background-position: 0 -108px
+        }
+    </style>
+    <div id="garland" class="garland_4">
+        <div id="nums_1">1</div>
+    </div>
+    <script type="text/javascript">
+        function garland() {
+            nums = document.getElementById('nums_1').innerHTML if (nums == 1) {
+                document.getElementById('garland')
+                    .className = 'garland_1'; document.getElementById('nums_1').innerHTML = '2'
+            } if (nums == 2) {
+                document.getElementById('garland')
+                    .className = 'garland_2'; document.getElementById('nums_1').innerHTML = '3'
+            } if (nums == 3) {
+                document.getElementById('garland')
+                    .className = 'garland_3'; document.getElementById('nums_1').innerHTML = '4'
+            } if (nums == 4) {
+                document.getElementById('garland')
+                    .className = 'garland_4'; document.getElementById('nums_1').innerHTML = '1'
+            }
+        } setInterval(function () { garland() }, 600)
+    </script>
+</body>
+
+</html>
